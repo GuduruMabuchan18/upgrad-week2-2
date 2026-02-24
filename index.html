@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Product Cart Summary</title>
+  <title>Task Manager</title>
 </head>
 <body>
+  <h2>Task Manager (Async Storage)</h2>
 
-    <h2>Check Console for Output</h2>
+  <button onclick="runCallbackVersion()">Run Callback Version</button>
+  <button onclick="runPromiseVersion()">Run Promise Version</button>
+  <button onclick="runAsyncVersion()">Run Async/Await Version</button>
 
-    <script>
-        const cart = [
-            { name: "Laptop", price: 50000, quantity: 1 },
-            { name: "Mouse", price: 500, quantity: 2 },
-            { name: "Keyboard", price: 1500, quantity: 1 }
-        ];
+  <div id="output"></div>
 
-        const totalAmount = cart.reduce((total, product) =>
-            total + product.price * product.quantity, 0);
-
-        const invoice = cart.map(product =>
-            `${product.name} - ₹${product.price} x ${product.quantity}`
-        ).join('\n');
-
-        console.log(`
------- Invoice ------
-${invoice}
-
-Total Amount: ₹${totalAmount}
-        `);
-    </script>
-
+  <script type="module" src="app.js"></script>
 </body>
 </html>
